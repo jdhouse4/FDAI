@@ -43,6 +43,17 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
     //
     // Orientation properties
     //
+    let firstRotation    = simd_quatf(angle: -(75.0 * .pi / 180.0),
+                                      axis: simd_normalize(simd_float3(x: 0, y: 1, z: 0))).normalized
+    
+    let secondRotation  = simd_quatf(angle: .pi/2,
+                                     axis: simd_normalize(simd_float3(x: 0, y: 0, z: 1))).normalized
+    
+    let spacecraftFDAINode.simdOrientation = simd_mul(simd_quatf(angle: -(75.0 * .pi / 180.0),
+                                                axis: simd_normalize(simd_float3(x: 0, y: 1, z: 0))).normalized,
+                                             simd_quatf(angle: .pi/2,
+                                                axis: simd_normalize(simd_float3(x: 0, y: 0, z: 1))).normalized).normalized
+    
     @Published var spacecraftDeltaQuaternion: simd_quatf    = simd_quatf()
     @Published var spacecraftOrientation: simd_quatf        = simd_quatf()
     @Published var spacecraftEulerAngles: SIMD3<Float>      = simd_float3()
@@ -196,8 +207,9 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
         if spacecraftFDAICurrentCamera == SpacecraftFDAICamera.spacecraftFDAICamera.rawValue {
             
             //print("\(#function) updating spacecraftFDAICurrentCameraNode: \(spacecraftFDAICurrentCameraNode.name)")
-            self.updateFDAICameraOrientation(of: spacecraftFDAICurrentCameraNode)
-            
+            //self.updateFDAICameraOrientation(of: spacecraftFDAICurrentCameraNode)
+            self.updateFDAICameraOrientation(of: spacecraftFDAINode)
+
         }
 
     }
@@ -640,7 +652,7 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
         
         node.simdOrientation   = simd_quatf(ix: -Float(motionManager.deviceMotion!.attitude.quaternion.x),
                                             iy: -Float(motionManager.deviceMotion!.attitude.quaternion.y),
-                                            iz: Float(motionManager.deviceMotion!.attitude.quaternion.z),
+                                            iz:  Float(motionManager.deviceMotion!.attitude.quaternion.z),
                                             r:   Float(motionManager.deviceMotion!.attitude.quaternion.w)).normalized
         
 
