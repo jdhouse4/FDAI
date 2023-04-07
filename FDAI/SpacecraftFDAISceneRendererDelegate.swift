@@ -630,7 +630,7 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
 
 
         // Change Orientation with Device Motion
-        let motionSimdQuatf     = simd_quatf(ix: -Float(motionManager.deviceMotion!.attitude.quaternion.x),
+        let motionSimdQuatf     = simd_quatf(ix: Float(motionManager.deviceMotion!.attitude.quaternion.x),
                                              iy: -Float(motionManager.deviceMotion!.attitude.quaternion.y),
                                              iz: -Float(motionManager.deviceMotion!.attitude.quaternion.z),
                                              r:   Float(motionManager.deviceMotion!.attitude.quaternion.w)).normalized

@@ -22,13 +22,19 @@ struct SpacecraftFDAISceneView: View {
     
     var body: some View {
         
-        SceneView (
-            scene: spacecraftFDAI.spacecraftFDAIScene,
-            pointOfView: spacecraftFDAI.spacecraftFDAICurrentCamera,
-            delegate: spacecraftFDAISceneRendererDelegate
-        )
-        .frame(width: 300, height: 300)
-        
+        //ZStack {
+            SceneView (
+                scene: spacecraftFDAI.spacecraftFDAIScene,
+                pointOfView: spacecraftFDAI.spacecraftFDAICurrentCamera,
+                delegate: spacecraftFDAISceneRendererDelegate
+            )
+            .frame(width: 300, height: 300)
+            .mask {
+                RoundedRectangle(cornerRadius: 150.0)
+            }
+
+            
+        //}
         .onTapGesture(count: 2, perform: {
             
             motionManager.resetReferenceFrame()

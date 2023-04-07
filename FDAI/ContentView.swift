@@ -15,15 +15,29 @@ struct ContentView: View {
     
     @StateObject var spacecraftFDAIScene                    = SpacecraftFDAISceneKitScene.shared
     @StateObject var spacecraftFDAISceneRendererDelegate    = SpacecraftFDAISceneRendererDelegate()
+    
+    @EnvironmentObject var motionManager: MotionManager
 
     
     var body: some View {
-        VStack {
+        ZStack {
+            
             SpacecraftFDAISceneView()
             
-            
+            Image("centerIndicatorFDAI")
+                .resizable()
+                .scaledToFit()
             
         }
+        /*.mask {
+            RoundedRectangle(cornerRadius: 150.0)
+        }*/
+        .onTapGesture(count: 2, perform: {
+            
+            motionManager.resetReferenceFrame()
+            
+        })
+
         .padding()
         
         .environmentObject(spacecraftFDAIScene)
