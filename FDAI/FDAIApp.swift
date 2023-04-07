@@ -9,9 +9,22 @@ import SwiftUI
 
 @main
 struct FDAIApp: App {
+    
+    @StateObject var motionManager                          = MotionManager.shared
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                
+                .onAppear {
+                    motionManager.setupDeviceMotion()
+                }
+                .onDisappear {
+                    motionManager.stopMotion()
+                }
+
+                .environmentObject(motionManager)
         }
     }
+        
 }
