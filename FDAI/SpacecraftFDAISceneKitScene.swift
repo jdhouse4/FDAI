@@ -16,7 +16,7 @@ final class SpacecraftFDAISceneKitScene: SCNScene, ObservableObject {
     static let shared   = SpacecraftFDAISceneKitScene()
     
     
-    var spacecraftFDAIScene                             = SCNScene(named: "FDAI.scnassets/Orion_CM_FDAI_Assets/Orion_CM_FDAI_Ball.scn")!
+    var spacecraftFDAIScene                             = SCNScene(named: "FDAI.scnassets/Orion_CM_FDAI_Assets/Orion_CM_FDAI.scn")!
     var spacecraftFDAISceneNode: SCNNode
     
     var spacecraftFDAINode                              = SCNNode()

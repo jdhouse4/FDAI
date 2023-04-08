@@ -87,7 +87,7 @@ final class MotionManager: ObservableObject {
                                         self.motionQuaternion = simd_quatf( ix: -Float((self.deviceMotion?.attitude.quaternion.y)!),
                                                                             iy:  Float((self.deviceMotion?.attitude.quaternion.x)!),
                                                                             iz:  Float((self.deviceMotion?.attitude.quaternion.z)!),
-                                                                            r:   Float((self.deviceMotion?.attitude.quaternion.w)!)).normalized
+                                                                            r:   Float(((self.deviceMotion!.attitude.quaternion.w)))).normalized
 
                                         //self.updateAttitude()
                                     }

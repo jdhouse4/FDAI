@@ -145,12 +145,11 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
         //print("\(#function) time: \(time)")
         
         /*
-        renderStep += 1
+        //renderStep += 1
         
         
         // This is to ensure that the time is initialized properly for the simulator.
-        if _previousUpdateTime == 0.0
-        {
+        if _previousUpdateTime == 0.0 {
             
             _previousUpdateTime     = time
             //print("\(#function) setting _previousUpdateTime to time: \(time)\n")
@@ -173,11 +172,11 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
         deltaRenderTime = time - previousRenderTime
         //print("\(#function) deltaRenderTime: \(deltaRenderTime)")
         
-        if deltaRenderTime > 1.0 {
+        if deltaRenderTime > 2.0 {
             
-            //print("\(#function) frame rate: \(renderStep)")
             previousRenderTime  = time
-            renderStep          = 0
+            renderStep          += 2
+            //print("\(#function) frame rate: \(renderStep)")
         }
          */
 
@@ -640,7 +639,7 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
         
         node.simdOrientation   = simd_quatf(ix: -Float(motionManager.deviceMotion!.attitude.quaternion.x),
                                             iy: -Float(motionManager.deviceMotion!.attitude.quaternion.y),
-                                            iz: Float(motionManager.deviceMotion!.attitude.quaternion.z),
+                                            iz:  Float(motionManager.deviceMotion!.attitude.quaternion.z),
                                             r:   Float(motionManager.deviceMotion!.attitude.quaternion.w)).normalized
         
 
