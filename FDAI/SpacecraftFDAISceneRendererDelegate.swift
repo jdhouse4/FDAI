@@ -196,7 +196,8 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
             
             //print("\(#function) updating spacecraftFDAICurrentCameraNode: \(spacecraftFDAICurrentCameraNode.name)")
             self.updateFDAICameraOrientation(of: spacecraftFDAICurrentCameraNode)
-            
+            //self.updateFDAICameraOrientation(of: spacecraftFDAINode)
+
         }
 
     }
@@ -637,11 +638,24 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
         node.simdOrientation   = simd_mul(motionSimdQuatf, correctedRotation).normalized
          */
         
+        //
+        // For the current camera node
+        //
         node.simdOrientation   = simd_quatf(ix: -Float(motionManager.deviceMotion!.attitude.quaternion.x),
                                             iy: -Float(motionManager.deviceMotion!.attitude.quaternion.y),
                                             iz:  Float(motionManager.deviceMotion!.attitude.quaternion.z),
                                             r:   Float(motionManager.deviceMotion!.attitude.quaternion.w)).normalized
         
+
+        /*
+        //
+        // For the FDAI node rotations
+        //
+        node.simdOrientation   = simd_quatf(ix:  Float(motionManager.deviceMotion!.attitude.quaternion.x),
+                                            iy:  Float(motionManager.deviceMotion!.attitude.quaternion.y),
+                                            iz: -Float(motionManager.deviceMotion!.attitude.quaternion.z),
+                                            r:   Float(motionManager.deviceMotion!.attitude.quaternion.w)).normalized
+        */
 
     }
     
