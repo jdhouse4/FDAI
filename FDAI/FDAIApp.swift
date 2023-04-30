@@ -10,7 +10,9 @@ import SwiftUI
 @main
 struct FDAIApp: App {
     
-    @StateObject var motionManager                          = MotionManager.shared
+    @StateObject var motionManager          = MotionManager.shared
+    @StateObject var launchScreenManager    = LaunchScreenManager.shared
+
 
     var body: some Scene {
         WindowGroup {
@@ -20,10 +22,13 @@ struct FDAIApp: App {
                     motionManager.setupDeviceMotion()
                 }
                 .onDisappear {
+                    motionManager.resetReferenceFrame()
                     motionManager.stopMotion()
                 }
 
                 .environmentObject(motionManager)
+                .environmentObject(launchScreenManager)
+
         }
     }
         

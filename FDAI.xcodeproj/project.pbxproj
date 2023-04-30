@@ -19,6 +19,7 @@
 		E6B53981296FD5A8005227E6 /* SpacecraftFDAISceneKitScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B5397F296FD5A8005227E6 /* SpacecraftFDAISceneKitScene.swift */; };
 		E6B53982296FD5A8005227E6 /* SpacecraftFDAISceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B53980296FD5A8005227E6 /* SpacecraftFDAISceneView.swift */; };
 		E6B53984296FD620005227E6 /* FDAI.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = E6B53983296FD620005227E6 /* FDAI.scnassets */; };
+		E6F6915429FF0F1000320106 /* LaunchScreenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F6915329FF0F1000320106 /* LaunchScreenManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,8 @@
 		E6B5397F296FD5A8005227E6 /* SpacecraftFDAISceneKitScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacecraftFDAISceneKitScene.swift; sourceTree = "<group>"; };
 		E6B53980296FD5A8005227E6 /* SpacecraftFDAISceneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacecraftFDAISceneView.swift; sourceTree = "<group>"; };
 		E6B53983296FD620005227E6 /* FDAI.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = FDAI.scnassets; sourceTree = "<group>"; };
+		E6F6915329FF0F1000320106 /* LaunchScreenManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenManager.swift; sourceTree = "<group>"; };
+		E6F6915529FF1BC400320106 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,11 +70,13 @@
 		E6B53970296FD548005227E6 /* FDAI */ = {
 			isa = PBXGroup;
 			children = (
+				E6F6915529FF1BC400320106 /* Info.plist */,
 				E6B53971296FD548005227E6 /* FDAIApp.swift */,
 				E6B53973296FD548005227E6 /* ContentView.swift */,
 				E6B5397F296FD5A8005227E6 /* SpacecraftFDAISceneKitScene.swift */,
 				E64B1D5B29DFF5E8003C175E /* SpacecraftFDAISceneRendererDelegate.swift */,
 				E6B53980296FD5A8005227E6 /* SpacecraftFDAISceneView.swift */,
+				E6F6915329FF0F1000320106 /* LaunchScreenManager.swift */,
 				E64B1D5E29DFF81C003C175E /* SpacecraftState.swift */,
 				E64B1D5D29DFF81C003C175E /* SpacecraftCameraState.swift */,
 				E64B1D5929DFF51F003C175E /* MotionManager.swift */,
@@ -170,6 +175,7 @@
 				E64B1D6029DFF81C003C175E /* SpacecraftState.swift in Sources */,
 				E64B1D6229DFF872003C175E /* SpacecraftFDAICamera.swift in Sources */,
 				E6B53972296FD548005227E6 /* FDAIApp.swift in Sources */,
+				E6F6915429FF0F1000320106 /* LaunchScreenManager.swift in Sources */,
 				E64B1D5F29DFF81C003C175E /* SpacecraftCameraState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,7 +233,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -281,7 +287,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -302,11 +308,12 @@
 				DEVELOPMENT_TEAM = 7CCAB8L658;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FDAI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -331,11 +338,12 @@
 				DEVELOPMENT_TEAM = 7CCAB8L658;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FDAI/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

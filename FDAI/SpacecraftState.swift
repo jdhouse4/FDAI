@@ -99,7 +99,7 @@ class SpacecraftState: ObservableObject {
                                                              axis: simd_float3(x: 1.0, y: 0.0, z: 0.0)).normalized
         
         spacecraftDeltaQuaternion = simd_mul(spacecraftDeltaQuaternion, rollStarboardQuaternion).normalized
-        //print("\(#function): spacecraftDeltaQuaternion: \(spacecraftDeltaQuaternion.debugDescription)")
+        //print("\(#function): spacecraftFDAIDeltaQuaternion: \(spacecraftFDAIDeltaQuaternion.debugDescription)")
         
         return spacecraftDeltaQuaternion
     }
@@ -116,7 +116,7 @@ class SpacecraftState: ObservableObject {
                                                              axis: simd_float3(x: 1.0, y: 0.0, z: 0.0)).normalized
         
         spacecraftDeltaQuaternion = simd_mul(spacecraftDeltaQuaternion, rollStarboardQuaternion).normalized
-        //print("\(#function): spacecraftDeltaQuaternion: \(spacecraftDeltaQuaternion.debugDescription)")
+        //print("\(#function): spacecraftFDAIDeltaQuaternion: \(spacecraftFDAIDeltaQuaternion.debugDescription)")
         
         return spacecraftDeltaQuaternion
     }
@@ -134,7 +134,7 @@ class SpacecraftState: ObservableObject {
                                                         axis: simd_float3(x: -1.0, y: 0.0, z: 0.0)).normalized
         
         spacecraftDeltaQuaternion = simd_mul(spacecraftDeltaQuaternion, rollPortQuaternion).normalized
-        //print("\(#function): spacecraftDeltaQuaternion: \(spacecraftDeltaQuaternion.debugDescription)")
+        //print("\(#function): spacecraftFDAIDeltaQuaternion: \(spacecraftFDAIDeltaQuaternion.debugDescription)")
         
         return spacecraftDeltaQuaternion
     }
@@ -152,7 +152,7 @@ class SpacecraftState: ObservableObject {
                                                         axis: simd_float3(x: -1.0, y: 0.0, z: 0.0)).normalized
         
         spacecraftDeltaQuaternion = simd_mul(spacecraftDeltaQuaternion, rollPortQuaternion).normalized
-        //print("\(#function): spacecraftDeltaQuaternion: \(spacecraftDeltaQuaternion.debugDescription)")
+        //print("\(#function): spacecraftFDAIDeltaQuaternion: \(spacecraftFDAIDeltaQuaternion.debugDescription)")
         
         return spacecraftDeltaQuaternion
     }
@@ -171,7 +171,7 @@ class SpacecraftState: ObservableObject {
                                                        axis: simd_float3(x: 0.0, y: 0.0, z: 1.0)).normalized
         
         spacecraftDeltaQuaternion = simd_mul(spacecraftDeltaQuaternion, pitchUpQuaternion).normalized
-        //print("\(#function): spacecraftDeltaQuaterion: \(spacecraftDeltaQuaternion.debugDescription)")
+        //print("\(#function): spacecraftDeltaQuaterion: \(spacecraftFDAIDeltaQuaternion.debugDescription)")
         
         return spacecraftDeltaQuaternion
     }
@@ -188,7 +188,7 @@ class SpacecraftState: ObservableObject {
                                                        axis: simd_float3(x: 0.0, y: 0.0, z: 1.0)).normalized
         
         spacecraftDeltaQuaternion = simd_mul(spacecraftDeltaQuaternion, pitchUpQuaternion).normalized
-        //print("\(#function): spacecraftDeltaQuaterion: \(spacecraftDeltaQuaternion.debugDescription)")
+        //print("\(#function): spacecraftDeltaQuaterion: \(spacecraftFDAIDeltaQuaternion.debugDescription)")
         
         return spacecraftDeltaQuaternion
     }
@@ -205,7 +205,7 @@ class SpacecraftState: ObservableObject {
                                                        axis: simd_float3(x: 0.0, y: 0.0, z: -1.0)).normalized
         
         spacecraftDeltaQuaternion = simd_mul(spacecraftDeltaQuaternion, pitchUpQuaternion).normalized
-        //print("\(#function): spacecraftDeltaQuaterion: \(spacecraftDeltaQuaternion.debugDescription)")
+        //print("\(#function): spacecraftDeltaQuaterion: \(spacecraftFDAIDeltaQuaternion.debugDescription)")
         
         return spacecraftDeltaQuaternion
     }
@@ -222,7 +222,7 @@ class SpacecraftState: ObservableObject {
                                                        axis: simd_float3(x: 0.0, y: 0.0, z: -1.0)).normalized
         
         spacecraftDeltaQuaternion = simd_mul(spacecraftDeltaQuaternion, pitchUpQuaternion).normalized
-        //print("\(#function): spacecraftDeltaQuaterion: \(spacecraftDeltaQuaternion.debugDescription)")
+        //print("\(#function): spacecraftDeltaQuaterion: \(spacecraftFDAIDeltaQuaternion.debugDescription)")
         
         return spacecraftDeltaQuaternion
     }
