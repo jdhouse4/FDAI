@@ -25,7 +25,7 @@ struct SpacecraftLoadingView: View {
                 .fill(colorScheme == .light ? .white : .black)
                 .edgesIgnoringSafeArea(.all)
                 .opacity(!launchScreenManaager.animateLoadViewFade ? 1.0 : 0.0)
-                .animation(.easeOut(duration: 1.5), value: launchScreenManaager.animateLoadViewFade)
+                .animation(.easeOut(duration: 0.5), value: launchScreenManaager.animateLoadViewFade)
 
             // MARK: Note about using images as a background during asset loading.
             //
@@ -49,16 +49,16 @@ struct SpacecraftLoadingView: View {
                     .foregroundColor(colorScheme == .dark ? .accentColor : .white)
                     .scaleEffect(sizeClass == .compact ? 1.0 : 3.0)
                     .opacity(launchScreenManaager.loadingFile ? 1.0 : 0.0)
-                    .padding(.bottom, sizeClass == .compact ? 50.0 : 80)
+                    .padding(.bottom, sizeClass == .compact ? 30.0 : 50)
 
-                Spacer()
+                //Spacer()
                 
-                /*
-                Text("This page will have prettier artwork than this. Promise!")
+                
+                /*Text("This page will have prettier artwork than this. Promise!")
                     .foregroundColor(colorScheme == .dark ? .accentColor : .white)
                     .font(sizeClass == .compact ? .body : .subheadline)
-                    .opacity(launchScreenManaager.loadingFile ? 1.0 : 0.0)
-                */
+                    .opacity(launchScreenManaager.loadingFile ? 1.0 : 0.0)*/
+                
                 
             }
             

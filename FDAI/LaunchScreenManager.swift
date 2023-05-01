@@ -26,13 +26,13 @@ final class LaunchScreenManager: ObservableObject {
         self.loadingFile.toggle()
         print("\(#function) loadingFile.toggle() at \(Date())")
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             
             self.animateLoadViewFade.toggle()
             print("\(#function) animateLoadViewFade.toggle() at \(Date())")
             
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.25) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
                 
                 self.loadedFile.toggle()
                 print("\(#function) loadedFile.toggle() at \(Date())")
