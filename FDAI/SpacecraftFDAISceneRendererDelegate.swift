@@ -39,6 +39,7 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
     @Published var spacecraftFDAINodeString: String     = "Orion_CSM_FDAI_Node"
     
     @Published var sceneIsRendering: Bool               = false
+    @Published var resetSpacecraftEulerAngles: Bool     = false
     
     //
     // Orientation properties
@@ -143,6 +144,17 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
         ///
         motionManager.updateAttitude()
         
+        
+        if resetSpacecraftEulerAngles == true {
+            
+            print("\(#function) Resetting!!!")
+            
+            resetEulerAngles()
+            
+            resetSpacecraftEulerAngles.toggle()
+            
+        }
+        
     }
     
     
@@ -160,7 +172,7 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
         // that Peter Liu found for me.
         //
         
-        /*
+        
         if currentTime == 0.0 {
             
             currentTime = time
@@ -188,7 +200,6 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
             
             accumulator -= dT
             
-       */
             
             //
             // Determine whether to let the motion manager update the camera orientation based on whether
@@ -202,6 +213,16 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
                 
             }
 
+            /*
+            if resetSpacecraftEulerAngles {
+                
+                resetEulerAngles()
+                
+                resetSpacecraftEulerAngles.toggle()
+                
+            }
+            */
+            
             
             //
             // MARK: Calculate current euler angles, previous to updating and then reading the spacecraft's orientation.
@@ -211,14 +232,14 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
             
             // Calculate Delta Angles
             deltaRoll   =  radians2Degrees(deltaEulerAngles.z)
+            deltaYaw    =  -radians2Degrees(deltaEulerAngles.y)
             deltaPitch  =  radians2Degrees(deltaEulerAngles.x)
-            deltaYaw    = -radians2Degrees(deltaEulerAngles.y)
-            
+
             // Calculate the rate of change in angle deltas.
             rollRate    = deltaRoll / Float(dT)
-            pitchRate   = deltaPitch / Float(dT)
             yawRate     = deltaYaw / Float(dT)
-            
+            pitchRate   = deltaPitch / Float(dT)
+
             
             //
             // Roll
@@ -255,19 +276,19 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
             //
             // Yaw
             //
-            if spacecraftYawAngle > 360.0 {
+            if spacecraftYawAngle >= 360.0 {
                 
                 spacecraftYawAngle = 0.0
                 
             }
             
             
-            if yawRate > 0.0 {
+            if yawRate < 0.0 {
                 
                 spacecraftYawAngle += abs(deltaYaw)
                 
                 
-            } else if yawRate < 0.0 {
+            } else if yawRate > 0.0 {
                 
                 
                 if spacecraftYawAngle > 0.0 {
@@ -284,61 +305,61 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
             }
             
             
-            
-            //t += dT
-            
-        //}
-        
-        
-        //
-        // Pitch
-        //
-        if spacecraftPitchAngle > 360.0 {
-            
-            spacecraftPitchAngle = 0.0
-            
-        }
-        
-        
-        if pitchRate > 0.0 {
-            
-            spacecraftPitchAngle += abs(deltaPitch)
-            
-            
-        } else if pitchRate < 0.0 {
-            
-            
-            if spacecraftPitchAngle > 0.0 {
+            //
+            // Pitch
+            //
+            if spacecraftPitchAngle > 360.0 {
                 
-                spacecraftPitchAngle -= abs(deltaPitch)
-                
-                
-            }  else {
-                
-                spacecraftPitchAngle = 360.0 - abs(deltaPitch)
+                spacecraftPitchAngle = 0.0
                 
             }
+            
+            
+            if pitchRate > 0.0 {
+                
+                spacecraftPitchAngle += abs(deltaPitch)
+                
+                
+            } else if pitchRate < 0.0 {
+                
+                
+                if spacecraftPitchAngle > 0.0 {
+                    
+                    spacecraftPitchAngle -= abs(deltaPitch)
+                    
+                    
+                }  else {
+                    
+                    spacecraftPitchAngle = 360.0 - abs(deltaPitch)
+                    
+                }
+                
+            }
+
+            
+            //t += dT
             
         }
 
         
-         print("\n")
+         //print("\n")
          //print("\(#function) spacecraftYawAngleDelta: \(spacecraftYawAngleDelta)°/s")
          //print("\(#function) SpacecraftState.shared.yawImpulseCounter = \(SpacecraftState.shared.yawImpulseCounter)")
          //print("\(#function) spacecraftSceneNode.simdEulerAngles.y = \(spacecraftSceneNode.simdEulerAngles.y)")
          //print("\(#function) spacecraftPreviousEulerAngles.y: \(spacecraftPreviousEulerAngles.y)radians")
          //print("\(#function) spacecraftPreviousYawAngle: \(spacecraftPreviousYawAngle)°")
          //print("\(#function) spacecraftCurrentEulerAngles.y: \(spacecraftCurrentEulerAngles.y) radians")
-         print("\(#function) spacecraftCurrentPitchEulerAngle: \(-spacecraftFDAICurrentCameraNode.simdEulerAngles.x * 180.0 / .pi)°")
-         print("\(#function) deltaPitch: \(deltaPitch)°")
-         print("\(#function) pitchRate: \(pitchRate)°/s")
-         print("\(#function) spacecraftPitchAngle: \(spacecraftPitchAngle)°")
-         print("\(#function) deltaYaw: \(deltaYaw)°")
-         print("\(#function) yawRate: \(yawRate)°/s")
-         print("\(#function) spacecraftYawAngle: \(spacecraftYawAngle)°")
-        print("\(#function) deltaRoll: \(deltaRoll)°")
-        print("\(#function) rollRate: \(rollRate)°/s")
-        print("\(#function) spacecraftRollAngle: \(spacecraftRollAngle)°")
+         //print("\(#function) spacecraftCurrentPitchEulerAngle: \(-spacecraftFDAICurrentCameraNode.simdEulerAngles.x * 180.0 / .pi)°")
+         //print("\(#function) deltaPitch: \(deltaPitch)°")
+         //print("\(#function) pitchRate: \(pitchRate)°/s")
+         //print("\(#function) spacecraftPitchAngle: \(spacecraftPitchAngle)°")
+         //print("\(#function) spacecraftCurrentYawEulerAngle: \(-spacecraftFDAICurrentCameraNode.simdEulerAngles.y * 180.0 / .pi)°")
+         //print("\(#function) deltaYaw: \(deltaYaw)°")
+         //print("\(#function) yawRate: \(yawRate)°/s")
+         //print("\(#function) spacecraftYawAngle: \(spacecraftYawAngle)°")
+        //print("\(#function) deltaRoll: \(deltaRoll)°")
+        //print("\(#function) rollRate: \(rollRate)°/s")
+        //print("\(#function) spacecraftRollAngle: \(spacecraftRollAngle)°")
          //print("\(#function) frameTime: \(frameTime)s")
          //print("\(#function) diffTime: \(diffTime)")
          //print("\(#function) accumulator: \(accumulator)")
@@ -425,6 +446,39 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
             }
             
         }
+        
+    }
+    
+    
+    
+    func stillAlive() {
+        
+        print("\n\(#function) Oh yeah!!!\n")
+        
+    }
+    
+    
+    
+    func resetEulerAngles() -> Void {
+        
+        spacecraftRollAngle     = 0.0
+        spacecraftYawAngle      = 0.0
+        spacecraftPitchAngle    = 0.0
+        
+        deltaRoll               = 0.0
+        deltaYaw                = 0.0
+        deltaPitch              = 0.0
+        
+        deltaRollRate           = 0.0
+        deltaYawRate            = 0.0
+        deltaPitchRate          = 0.0
+        
+        spacecraftPreviousFDAIQuaternion = simd_quatf(angle: 0, axis: simd_float3(x: 0.0, y: 0.0, z: 0.0))
+        spacecraftCurrentFDAIQuaternion =  simd_quatf(angle: 0, axis: simd_float3(x: 0.0, y: 0.0, z: 0.0))
+        
+        deltaEulerAngles = spacecraftSceneNodeDeltaEulerAngles()
+        
+        print("\n\(#function) All Euler angle parameters reset.")
         
     }
     
