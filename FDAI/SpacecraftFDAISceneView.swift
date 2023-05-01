@@ -31,16 +31,16 @@ struct SpacecraftFDAISceneView: View {
         .mask {
             RoundedRectangle(cornerRadius: 150.0)
         }
-        .onTapGesture(count: 2, perform: {
+        /*.onTapGesture(count: 2, perform: {
             print("I just double tapped")
             //print("\n\(#function) spacecraftFDAISceneRendererDelegate.resetEulerAngles: \(spacecraftFDAISceneRendererDelegate.resetSpacecraftEulerAngles)\n")
-            motionManager.resetReferenceFrame()
+            //motionManager.resetReferenceFrame()
             //spacecraftFDAISceneRendererDelegate.resetSpacecraftEulerAngles = true
             //spacecraftFDAISceneRendererDelegate.
             //spacecraftFDAISceneRendererDelegate.resetEulerAngles()
             spacecraftFDAISceneRendererDelegate.stillAlive()
             
-        })
+        })*/
         .onAppear {
             //print("\n\(#function) SpacecraftSceneView should have just popped-up!\n")
             spacecraftFDAISceneRendererDelegate.spacecraftFDAICurrentCameraNode = spacecraftFDAI.spacecraftFDAICameraNode

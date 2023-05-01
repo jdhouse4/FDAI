@@ -29,13 +29,12 @@ struct ContentView: View {
                 .scaledToFit()
             
         }
-        /*.mask {
-            RoundedRectangle(cornerRadius: 150.0)
-        }*/
         .onTapGesture(count: 2, perform: {
             
             motionManager.resetReferenceFrame()
             
+            spacecraftFDAISceneRendererDelegate.resetSpacecraftEulerAngles = true
+            spacecraftFDAISceneRendererDelegate.stillAlive()
         })
 
         .padding()
