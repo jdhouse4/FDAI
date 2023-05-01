@@ -341,7 +341,7 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
             
         }
 
-        
+        /*
          print("\n")
          //print("\(#function) spacecraftYawAngleDelta: \(spacecraftYawAngleDelta)°/s")
          //print("\(#function) SpacecraftState.shared.yawImpulseCounter = \(SpacecraftState.shared.yawImpulseCounter)")
@@ -365,7 +365,7 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
          //print("\(#function) accumulator: \(accumulator)")
          print("\(#function) dT: \(dT)")
          //print("\(#function) t: \(t)\n")
-         
+         */
         
     }
     

@@ -34,7 +34,6 @@ struct ContentView: View {
             motionManager.resetReferenceFrame()
             
             spacecraftFDAISceneRendererDelegate.resetSpacecraftEulerAngles = true
-            spacecraftFDAISceneRendererDelegate.stillAlive()
         })
 
         .padding()

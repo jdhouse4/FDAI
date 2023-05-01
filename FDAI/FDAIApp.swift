@@ -12,24 +12,40 @@ struct FDAIApp: App {
     
     @StateObject var motionManager          = MotionManager.shared
     @StateObject var launchScreenManager    = LaunchScreenManager.shared
-
-
+    
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ZStack {
                 
-                .onAppear {
-                    motionManager.setupDeviceMotion()
-                }
-                .onDisappear {
-                    motionManager.resetReferenceFrame()
-                    motionManager.stopMotion()
+                ContentView()
+                
+                // MARK: Note: A good overview of launch screen options (tag: launchScreen)
+                //
+                // A good overview of launch screen options is at,
+                //
+                // https://betterprogramming.pub/launch-screen-with-swiftui-bd2958771f3b
+                //
+                if !launchScreenManager.loadedFile {
+                    
+                    SpacecraftLoadingView()
+                    
                 }
 
-                .environmentObject(motionManager)
-                .environmentObject(launchScreenManager)
-
+            }
+            
+            .onAppear {
+                motionManager.setupDeviceMotion()
+            }
+            .onDisappear {
+                motionManager.resetReferenceFrame()
+                motionManager.stopMotion()
+            }
+            
+            .environmentObject(motionManager)
+            .environmentObject(launchScreenManager)
+            
         }
     }
-        
+    
 }
