@@ -41,7 +41,7 @@ final class SpacecraftFDAISceneKitScene: SCNScene, ObservableObject {
     private override init() {
 
         print("SpacecraftFDAIScenekitScene private override initialized")
-        self.spacecraftFDAISceneNode    = spacecraftFDAIScene.rootNode.childNode(withName: "Orion_CM_FDAI_Scene_Node", recursively: true)!
+        self.spacecraftFDAISceneNode            = spacecraftFDAIScene.rootNode.childNode(withName: "Orion_CM_FDAI_Scene_Node", recursively: true)!
 
         self.spacecraftFDAICurrentCamera        = spacecraftFDAIScene.rootNode.childNode(withName: "Orion_CM_FDAI_Camera", recursively: true)!
         self.spacecraftFDAICurrentCameraNode    = spacecraftFDAIScene.rootNode.childNode(withName: "Orion_CM_FDAI_Camera_Node", recursively: true)!
@@ -59,7 +59,7 @@ final class SpacecraftFDAISceneKitScene: SCNScene, ObservableObject {
     required init?(coder: NSCoder) {
         
         print("SpacecraftFDAIScenekitScene private override initialized")
-        self.spacecraftFDAISceneNode    = spacecraftFDAIScene.rootNode.childNode(withName: "Orion_CM_FDAI_Scene_Node", recursively: true)!
+        self.spacecraftFDAISceneNode            = spacecraftFDAIScene.rootNode.childNode(withName: "Orion_CM_FDAI_Scene_Node", recursively: true)!
         
         self.spacecraftFDAICurrentCamera        = spacecraftFDAIScene.rootNode.childNode(withName: "Orion_CM_FDAI_Camera", recursively: true)!
         self.spacecraftFDAICurrentCameraNode    = spacecraftFDAIScene.rootNode.childNode(withName: "Orion_CM_FDAI_Camera_Node", recursively: true)!
