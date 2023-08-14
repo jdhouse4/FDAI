@@ -33,7 +33,7 @@ struct ContentView: View {
             
             motionManager.resetReferenceFrame()
             
-            spacecraftFDAISceneRendererDelegate.resetSpacecraftEulerAngles = true
+            spacecraftFDAISceneRendererDelegate.resetSpacecraftFDAIEulerAngles = true
             
         })
         .onAppear {
