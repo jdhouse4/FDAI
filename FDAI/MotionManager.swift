@@ -119,54 +119,6 @@ final class MotionManager: ObservableObject {
                 
             })
             
-            /*
-             //self.motionManager.startDeviceMotionUpdates()
-             
-             //if let motionData = deviceMotion {
-             
-             /*
-              self.motionTimer = Timer(fire: Date(), interval: (1.0 / 60.0), repeats: true) { (motionTimer) in
-              
-              if let motionData = self.deviceMotion {
-              
-              
-              //if self.deviceMotion != nil {
-              
-              /*
-               self.motionQuaternion = simd_quatf( ix: -Float((self.deviceMotion.attitude.quaternion.y)!),
-               iy:  Float((self.deviceMotion?.attitude.quaternion.x)!),
-               iz:  Float((self.deviceMotion?.attitude.quaternion.z)!),
-               r:   Float((self.deviceMotion?.attitude.quaternion.w)!)).normalized
-               */
-              
-              self.motionQuaternion = simd_quatf( ix: -Float((motionData.attitude.quaternion.y)),
-              iy:  Float((motionData.attitude.quaternion.x)),
-              iz:  Float((motionData.attitude.quaternion.z)),
-              r:   Float((motionData.attitude.quaternion.w))).normalized
-              
-              //print("\(#function) self.motionQuaternion: \(self.motionQuaternion)")
-              
-              }
-              
-              }
-              */
-             
-             //}
-             /*else {
-              
-              print("\(#function) There's a problem with the call, self.deviceMotion != nil")
-              
-              }*/
-             
-             //}
-             
-             //
-             // Add the timer to the current run loop.
-             //
-             // RunLoop.current.add(self.motionTimer!, forMode: RunLoop.Mode.common)
-             //RunLoop.current.add(self.motionTimer, forMode: RunLoop.Mode.default)
-             */
-            
         }
         
     }
@@ -180,9 +132,7 @@ final class MotionManager: ObservableObject {
         self.deviceMotionOn = false
         
         motionManager.stopDeviceMotionUpdates()
-        
-        //self.motionTimer.invalidate()
-        
+                
     }
     
     
