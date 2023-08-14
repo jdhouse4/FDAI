@@ -377,31 +377,31 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
     func renderer(_ renderer: SCNSceneRenderer, didSimulatePhysicsAtTime time: TimeInterval) {
         
         // This is to ensure that the time is initialized properly for the simulator.
-        if _previousUpdateTimeRenderer == 0.0
+        if _previousUpdateTimeAnimation == 0.0
         {
             
-            _previousUpdateTimeRenderer     = time
-            //print("\(#function) setting _previousUpdateTime to time: \(time)\n")
+            _previousUpdateTimeAnimation     = time
+            //print("\(#function) setting _previousUpdateTimeAnimation to time: \(time)\n")
             
         }
         
-        _deltaTimeRenderer  = time - _previousUpdateTimeRenderer
+        _deltaTimeAnimation  = time - _previousUpdateTimeAnimation
         //print("\(#function) _deltaTime: \(_deltaTime)")
         
         
         // MARK: Calculate attitude changes and rates, and loading of assets.
-        if _deltaTimeRenderer > 0.2
+        if _deltaTimeAnimation > 0.2
         {
             //
             // Calculating euler angles and roll rates
             //
-            //print("\n\(#function) Time to display calculated eulers and roll rates at: \(_deltaTimeRenderer).")
+            //print("\n\(#function) Time to display calculated eulers and roll rates at: \(_deltaTimeAnimation).")
             //print("\(#function) _deltaTime: \(_deltaTime)")
             
             
             // MARK: _deltaTime is reset to zero.
-            _previousUpdateTimeRenderer         = time
-            //print("\(#function) _previousTime: \(_previousUpdateTime)")
+            _previousUpdateTimeAnimation         = time
+            //print("\(#function) _previousTime: \(_previousUpdateTimeAnimation)")
             
             
             ///
