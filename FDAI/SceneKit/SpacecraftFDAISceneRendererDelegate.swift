@@ -33,12 +33,12 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
     var spacecraftFDIAScene: SCNScene                   = SpacecraftFDAISceneKitScene.shared
     
     var spacecraftFDAISceneNode: SCNNode                = SCNNode()
-    var spacecraftSceneNodeString: String               = "Orion_CSM_FDAI_Scene_Node"
+    var spacecraftFDAISceneNodeString: String           = "Orion_CSM_FDAI_Scene_Node"
     
     @Published var spacecraftFDAINode: SCNNode          = SCNNode()
     @Published var spacecraftFDAINodeString: String     = "Orion_CSM_FDAI_Node"
     
-    @Published var sceneIsRendering: Bool               = false
+    @Published var fdaiSceneIsRendering: Bool           = false
 
     //
     // Orientation properties
