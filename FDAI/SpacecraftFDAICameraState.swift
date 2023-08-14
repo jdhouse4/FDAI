@@ -1,5 +1,5 @@
 //
-//  SpacecraftCameraState.swift
+//  SpacecraftFDAICameraState.swift
 //  MissionOrion2
 //
 //  Created by James Hillhouse IV on 8/7/22.
@@ -14,10 +14,10 @@ import simd
 
 
 @MainActor
-class SpacecraftCameraState: ObservableObject {
+class SpacecraftFDAICameraState: ObservableObject {
     
     // Needed to expose the camera state to the rest of the code base.
-    static var shared                                           = SpacecraftCameraState()
+    static var shared                                           = SpacecraftFDAICameraState()
     
     private let screenWidth                                     = UIScreen.main.bounds.width
     
@@ -203,7 +203,7 @@ class SpacecraftCameraState: ObservableObject {
     //
     func chase360CameraInertia(of currentCameraNode: SCNNode, with value: DragGesture.Value) {
         
-        //print("\n\(#function) Determine whether the inertial is needed and, if so, set the state of SpacecraftCameraState to true.")
+        //print("\n\(#function) Determine whether the inertial is needed and, if so, set the state of SpacecraftFDAICameraState to true.")
         
         //print("\(#function) deltaTranslationLength: \(deltaTranslationLength)")
         

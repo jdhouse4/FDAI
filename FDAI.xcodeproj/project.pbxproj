@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		E64B1D5A29DFF51F003C175E /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64B1D5929DFF51F003C175E /* MotionManager.swift */; };
 		E64B1D5C29DFF5E8003C175E /* SpacecraftFDAISceneRendererDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64B1D5B29DFF5E8003C175E /* SpacecraftFDAISceneRendererDelegate.swift */; };
-		E64B1D5F29DFF81C003C175E /* SpacecraftCameraState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64B1D5D29DFF81C003C175E /* SpacecraftCameraState.swift */; };
+		E64B1D5F29DFF81C003C175E /* SpacecraftFDAICameraState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64B1D5D29DFF81C003C175E /* SpacecraftFDAICameraState.swift */; };
 		E64B1D6029DFF81C003C175E /* SpacecraftState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64B1D5E29DFF81C003C175E /* SpacecraftState.swift */; };
 		E64B1D6229DFF872003C175E /* SpacecraftFDAICamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64B1D6129DFF872003C175E /* SpacecraftFDAICamera.swift */; };
 		E64D0A6629FF822B00D6CED1 /* SpacecraftLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64D0A6529FF822B00D6CED1 /* SpacecraftLoadingView.swift */; };
@@ -26,7 +26,7 @@
 /* Begin PBXFileReference section */
 		E64B1D5929DFF51F003C175E /* MotionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
 		E64B1D5B29DFF5E8003C175E /* SpacecraftFDAISceneRendererDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacecraftFDAISceneRendererDelegate.swift; sourceTree = "<group>"; };
-		E64B1D5D29DFF81C003C175E /* SpacecraftCameraState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacecraftCameraState.swift; sourceTree = "<group>"; };
+		E64B1D5D29DFF81C003C175E /* SpacecraftFDAICameraState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacecraftFDAICameraState.swift; sourceTree = "<group>"; };
 		E64B1D5E29DFF81C003C175E /* SpacecraftState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacecraftState.swift; sourceTree = "<group>"; };
 		E64B1D6129DFF872003C175E /* SpacecraftFDAICamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacecraftFDAICamera.swift; sourceTree = "<group>"; };
 		E64D0A6529FF822B00D6CED1 /* SpacecraftLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpacecraftLoadingView.swift; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 				E6F6915329FF0F1000320106 /* LaunchScreenManager.swift */,
 				E64D0A6529FF822B00D6CED1 /* SpacecraftLoadingView.swift */,
 				E64B1D5E29DFF81C003C175E /* SpacecraftState.swift */,
-				E64B1D5D29DFF81C003C175E /* SpacecraftCameraState.swift */,
+				E64B1D5D29DFF81C003C175E /* SpacecraftFDAICameraState.swift */,
 				E64B1D5929DFF51F003C175E /* MotionManager.swift */,
 				E64B1D6129DFF872003C175E /* SpacecraftFDAICamera.swift */,
 				E6B53975296FD549005227E6 /* Assets.xcassets */,
@@ -180,7 +180,7 @@
 				E64B1D6229DFF872003C175E /* SpacecraftFDAICamera.swift in Sources */,
 				E6B53972296FD548005227E6 /* FDAIApp.swift in Sources */,
 				E6F6915429FF0F1000320106 /* LaunchScreenManager.swift in Sources */,
-				E64B1D5F29DFF81C003C175E /* SpacecraftCameraState.swift in Sources */,
+				E64B1D5F29DFF81C003C175E /* SpacecraftFDAICameraState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

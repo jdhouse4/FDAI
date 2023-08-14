@@ -26,7 +26,7 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
     //
     // "Main actor-isolated static property 'shared' can not be referenced from a non-isolated context"
     //
-    // So, go direct! Use, SpacecraftCameraState.shared.(some @Published property of the singleton).
+    // So, go direct! Use, SpacecraftFDAICameraState.shared.(some @Published property of the singleton).
     //
     // And the same with SpacecraftState.shared.
     //
