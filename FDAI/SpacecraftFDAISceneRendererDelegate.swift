@@ -47,9 +47,9 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
     @Published var spacecraftFDAIOrientation: simd_quatf        = simd_quatf()
     @Published var spacecraftFDAIEulerAngles: SIMD3<Float>      = simd_float3()
     
-    @Published var fdaiDeltaRollRate:Float      = 0.0
-    @Published var fdaiDeltaPitchRate: Float    = 0.0
-    @Published var fdaiDeltaYawRate: Float      = 0.0
+    @Published var fdaiDeltaRollRate:Float                      = 0.0
+    @Published var fdaiDeltaPitchRate: Float                    = 0.0
+    @Published var fdaiDeltaYawRate: Float                      = 0.0
     
     //
     // For switching cameras in the scene.
@@ -64,27 +64,27 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
     var spacecraftCurrentFDAIQuaternion: simd_quatf     = simd_quatf()
     var deltaFDAIEulerAngles: SIMD3<Float>              = simd_float3()
     
-    var spacecraftFDAIRollAngle: Float                  = 0.0
-    var spacecraftFDAIYawAngle: Float                   = 0.0
-    var spacecraftFDAIPitchAngle: Float                 = 0.0
+    var spacecraftFDAIRollAngle: Float              = 0.0
+    var spacecraftFDAIYawAngle: Float               = 0.0
+    var spacecraftFDAIPitchAngle: Float             = 0.0
     
     
     //
     // Orientation and Their Rate Change Parameters
     //
-    var fdaiDeltaRoll : Float               = 0.0
-    var fdaiDeltaPitch: Float               = 0.0
-    var fdaiDeltaYaw  : Float               = 0.0
-    var fdaiRollRate  : Float               = 0.0
-    var fdaiPitchRate : Float               = 0.0
-    var yawRate   : Float                   = 0.0
+    var fdaiDeltaRoll : Float                       = 0.0
+    var fdaiDeltaPitch: Float                       = 0.0
+    var fdaiDeltaYaw  : Float                       = 0.0
+    var fdaiRollRate  : Float                       = 0.0
+    var fdaiPitchRate : Float                       = 0.0
+    var yawRate   : Float                           = 0.0
     
-    var motionManager                       = MotionManager.shared
+    var motionManager                               = MotionManager.shared
 
 
-    var changeCamera: Bool                  = false
+    var changeCamera: Bool                          = false
         
-    var showsStatistics: Bool               = false
+    var showsStatistics: Bool                       = false
     
     // Time, oh time...
     var _previousUpdateTime: TimeInterval           = 0.0
