@@ -155,11 +155,6 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
             
         }
         
-    }
-    
-    
-    
-    func renderer(_ renderer: SCNSceneRenderer, didSimulatePhysicsAtTime time: TimeInterval) {
         
         // MARK: Fix Your TimeStep Code
         //
@@ -212,16 +207,16 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
                 //self.updateFDAICameraOrientation(of: spacecraftFDAINode)
                 
             }
-
+            
             /*
-            if resetSpacecraftEulerAngles {
-                
-                resetEulerAngles()
-                
-                resetSpacecraftEulerAngles.toggle()
-                
-            }
-            */
+             if resetSpacecraftEulerAngles {
+             
+             resetEulerAngles()
+             
+             resetSpacecraftEulerAngles.toggle()
+             
+             }
+             */
             
             
             //
@@ -234,12 +229,12 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
             deltaRoll   =  radians2Degrees(deltaEulerAngles.z)
             deltaYaw    =  -radians2Degrees(deltaEulerAngles.y)
             deltaPitch  =  radians2Degrees(deltaEulerAngles.x)
-
+            
             // Calculate the rate of change in angle deltas.
             rollRate    = deltaRoll / Float(dT)
             yawRate     = deltaYaw / Float(dT)
             pitchRate   = deltaPitch / Float(dT)
-
+            
             
             //
             // Roll
@@ -335,12 +330,12 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
                 }
                 
             }
-
+            
             
             //t += dT
             
         }
-
+        
         /*
          print("\n")
          //print("\(#function) spacecraftYawAngleDelta: \(spacecraftYawAngleDelta)°/s")
@@ -357,9 +352,9 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
          print("\(#function) deltaYaw: \(deltaYaw)°")
          print("\(#function) yawRate: \(yawRate)°/s")
          print("\(#function) spacecraftYawAngle: \(spacecraftYawAngle)°")
-        //print("\(#function) deltaRoll: \(deltaRoll)°")
-        //print("\(#function) rollRate: \(rollRate)°/s")
-        //print("\(#function) spacecraftRollAngle: \(spacecraftRollAngle)°")
+         //print("\(#function) deltaRoll: \(deltaRoll)°")
+         //print("\(#function) rollRate: \(rollRate)°/s")
+         //print("\(#function) spacecraftRollAngle: \(spacecraftRollAngle)°")
          //print("\(#function) frameTime: \(frameTime)s")
          //print("\(#function) diffTime: \(diffTime)")
          //print("\(#function) accumulator: \(accumulator)")
@@ -372,7 +367,14 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
     
     
     @MainActor
-    func renderer(_ renderer: SCNSceneRenderer, didRenderScene scene: SCNScene, atTime time: TimeInterval) {
+    func renderer(_ renderer: SCNSceneRenderer, didApplyAnimationsAtTime time: TimeInterval) {
+        
+        
+    }
+    
+    
+    
+    func renderer(_ renderer: SCNSceneRenderer, didSimulatePhysicsAtTime time: TimeInterval) {
         
         // This is to ensure that the time is initialized properly for the simulator.
         if _previousUpdateTimeRenderer == 0.0
@@ -388,7 +390,8 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
         
         
         // MARK: Calculate attitude changes and rates, and loading of assets.
-        if _deltaTimeRenderer > 0.2 {
+        if _deltaTimeRenderer > 0.2
+        {
             //
             // Calculating euler angles and roll rates
             //
@@ -446,6 +449,7 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
             }
             
         }
+
         
     }
     
