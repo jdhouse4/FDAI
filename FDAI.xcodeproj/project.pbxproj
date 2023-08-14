@@ -71,13 +71,10 @@
 				E6F6915529FF1BC400320106 /* Info.plist */,
 				E6B53971296FD548005227E6 /* FDAIApp.swift */,
 				E6B53973296FD548005227E6 /* ContentView.swift */,
-				E6B5397F296FD5A8005227E6 /* SpacecraftFDAISceneKitScene.swift */,
-				E64B1D5B29DFF5E8003C175E /* SpacecraftFDAISceneRendererDelegate.swift */,
 				E6B53980296FD5A8005227E6 /* SpacecraftFDAISceneView.swift */,
-				E6F6915329FF0F1000320106 /* LaunchScreenManager.swift */,
-				E64D0A6529FF822B00D6CED1 /* SpacecraftLoadingView.swift */,
-				E64B1D5929DFF51F003C175E /* MotionManager.swift */,
-				E64B1D6129DFF872003C175E /* SpacecraftFDAICamera.swift */,
+				E6DC091F2A8ACD290030ED81 /* SceneKit */,
+				E6DC09202A8ACD3A0030ED81 /* Loading LaunchScreen */,
+				E6DC09212A8ACD5C0030ED81 /* ObservableObjects */,
 				E6B53975296FD549005227E6 /* Assets.xcassets */,
 				E6B53977296FD549005227E6 /* Preview Content */,
 				E6B53983296FD620005227E6 /* FDAI.scnassets */,
@@ -91,6 +88,33 @@
 				E6B53978296FD549005227E6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E6DC091F2A8ACD290030ED81 /* SceneKit */ = {
+			isa = PBXGroup;
+			children = (
+				E6B5397F296FD5A8005227E6 /* SpacecraftFDAISceneKitScene.swift */,
+				E64B1D5B29DFF5E8003C175E /* SpacecraftFDAISceneRendererDelegate.swift */,
+			);
+			path = SceneKit;
+			sourceTree = "<group>";
+		};
+		E6DC09202A8ACD3A0030ED81 /* Loading LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E6F6915329FF0F1000320106 /* LaunchScreenManager.swift */,
+				E64D0A6529FF822B00D6CED1 /* SpacecraftLoadingView.swift */,
+			);
+			path = "Loading LaunchScreen";
+			sourceTree = "<group>";
+		};
+		E6DC09212A8ACD5C0030ED81 /* ObservableObjects */ = {
+			isa = PBXGroup;
+			children = (
+				E64B1D5929DFF51F003C175E /* MotionManager.swift */,
+				E64B1D6129DFF872003C175E /* SpacecraftFDAICamera.swift */,
+			);
+			path = ObservableObjects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
