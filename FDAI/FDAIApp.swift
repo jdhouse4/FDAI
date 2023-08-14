@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct FDAIApp: App {
     
-    @StateObject var motionManager          = MotionManager.shared
+    //@StateObject var motionManager          = MotionManager.shared
     @StateObject var launchScreenManager    = LaunchScreenManager.shared
     
     
@@ -33,16 +33,16 @@ struct FDAIApp: App {
                 }
 
             }
-            
+            /*
             .onAppear {
                 motionManager.setupDeviceMotion()
             }
             .onDisappear {
-                motionManager.resetReferenceFrame()
+                //motionManager.resetReferenceFrame()
                 motionManager.stopMotion()
             }
-            
-            .environmentObject(motionManager)
+            */
+            //.environmentObject(motionManager)
             .environmentObject(launchScreenManager)
             
         }

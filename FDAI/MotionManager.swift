@@ -102,7 +102,7 @@ final class MotionManager: ObservableObject {
 
 
 
-    func stopMotion() {
+    func stopDeviceMotion() {
         motionManager.stopDeviceMotionUpdates()
     }
 
