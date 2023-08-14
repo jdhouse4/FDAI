@@ -227,13 +227,13 @@ class SpacecraftFDAISceneRendererDelegate: NSObject, SCNSceneRendererDelegate, O
             
             
             // Calculate Delta Angles
-            fdaiDeltaRoll   =  radians2Degrees(deltaFDAIEulerAngles.z)
+            fdaiDeltaRoll   =   radians2Degrees(deltaFDAIEulerAngles.z)
             fdaiDeltaYaw    =  -radians2Degrees(deltaFDAIEulerAngles.y)
-            fdaiDeltaPitch  =  radians2Degrees(deltaFDAIEulerAngles.x)
+            fdaiDeltaPitch  =   radians2Degrees(deltaFDAIEulerAngles.x)
             
             // Calculate the rate of change in angle deltas.
             fdaiRollRate    = fdaiDeltaRoll / Float(dT)
-            yawRate     = fdaiDeltaYaw / Float(dT)
+            yawRate         = fdaiDeltaYaw / Float(dT)
             fdaiPitchRate   = fdaiDeltaPitch / Float(dT)
             
             
